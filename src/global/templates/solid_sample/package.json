@@ -1,0 +1,23 @@
+{
+  "name": "<%= projectName %>",
+  "version": "0.0.1",
+  "private": true,
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "keywords": [],
+  "homepage": "",
+  "bugs": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  }
+}

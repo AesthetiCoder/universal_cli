@@ -1,0 +1,40 @@
+{
+  "name": "universal_cli",
+  "version": "0.0.1",
+  "private": true,
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "keywords": [],
+  "homepage": "",
+  "bugs": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "main": "dist/index.js",
+  "dependencies": {
+    "boxen": "^7.0.2",
+    "chalk": "^5.2.0",
+    "commander": "^10.0.0",
+    "ejs": "^3.1.9",
+    "figlet": "^1.5.2",
+    "inquirer": "^9.1.4",
+    "listr": "^0.14.3",
+    "shelljs": "^0.8.5"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.1.2",
+    "@types/figlet": "^1.5.5",
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^18.15.3",
+    "@types/shelljs": "^0.8.11",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "eslint": "^8.36.0",
+    "shx": "^0.3.4",
+    "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.3",
+    "typescript": "^5.0.2"
+  }
+}
