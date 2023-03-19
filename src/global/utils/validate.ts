@@ -2,7 +2,7 @@ import { whichCommand } from '@global/lib/shell';
 import { deletePreviousLine } from '@global/utils/clear';
 import { printError } from '@global/utils/text';
 
-const validateprojectName = (value: string): boolean =>
+const validateProjectName = (value: string): boolean =>
 {
   if((/^[a-z0-9_]*$/).test(value))
   {
@@ -22,6 +22,6 @@ const validateCommand = (command: string, message: string) =>
 };
 
 export {
-  validateprojectName,
+  validateProjectName,
   validateCommand
 };

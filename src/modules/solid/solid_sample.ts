@@ -1,9 +1,9 @@
-import * as path from 'path';
-import * as fs from 'fs';
+import path from 'path';
+import fs from 'fs';
 import { cdCommand } from '@global/lib/shell';
-import { pnpmAddDependencies } from '@global/utils/depedencies';
 import { printError } from '@global/utils/text';
 import { NPMDependencyModel } from '@global/models/npm_dependency';
+import { pnpmAddDependencies } from '@global/utils/dependencies';
 
 const solidSamplePostInstall = (templatePath: string, targetPath: string): boolean =>
 {

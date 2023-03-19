@@ -13,36 +13,28 @@
       ],
       "@modules/*": [
         "./src/modules/*"
-      ],
+      ]
     },
     "strict": true,
     "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictBindCallApply": true,
-    "strictPropertyInitialization": true,
     "noImplicitThis": true,
-    "alwaysStrict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "removeComments": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "exactOptionalPropertyTypes": true,
+    "alwaysStrict": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "isolatedModules": true
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true
   },
-  "ts-node": {
-    "esm": true
-  },
-  "include": [
-    "public/**/*",
-    "src/**/*"
-  ],
   "exclude": [
     "./src/global/features",
     "./src/global/templates",

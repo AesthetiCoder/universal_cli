@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { createNewFeature } from '@global/utils/create_new_feature';
-import { createNewProject } from '@global/utils/create_new_proyects';
+import { createNewProject } from '@global/utils/create_new_projects';
 import { promptList } from '@global/lib/prompt';
 import { Command } from 'commander';
 import { clear } from '@global/utils/clear';

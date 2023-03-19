@@ -1,5 +1,5 @@
-import * as path from 'path';
-import * as fs from 'fs';
+import path from 'path';
+import fs from 'fs';
 import { promptCheckList } from '@global/lib/prompt';
 import { createFeatureDirectoryContent } from '@global/utils/create_directory_content';
 

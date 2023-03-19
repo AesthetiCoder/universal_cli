@@ -1,6 +1,6 @@
 import { render } from '@global/utils/render';
-import * as fs from 'fs';
-import * as path from 'path';
+import fs from 'fs';
+import path from 'path';
 
 const createFolder = (folderPath: string): boolean =>
 {

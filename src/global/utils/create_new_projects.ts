@@ -1,12 +1,12 @@
 import { createProjectDirectoryContent, createFolder } from '@global/utils/create_directory_content';
 import { printError } from '@global/utils/text';
 import { promptAskForValue, promptList } from '@global/lib/prompt';
-import * as path from 'path';
-import * as fs from 'fs';
-import { validateprojectName } from '@global/utils/validate';
+import { validateProjectName } from '@global/utils/validate';
 import { deletePreviousLine } from '@global/utils/clear';
 import { solidSamplePostInstall } from '@modules/solid/solid_sample';
 import { initRepository } from '@global/utils/git';
+import path from 'path';
+import fs from 'fs';
 
 const CURRENT_DIR = process.cwd();
 
@@ -14,7 +14,7 @@ const createProjectFolder = async () =>
 {
   const projectName = await promptAskForValue('Enter project name: ');
 
-  if(!validateprojectName(projectName))
+  if(!validateProjectName(projectName))
   {
     deletePreviousLine();
     printError('Name should be in lowercase, and only contain letters, numbers and underscore');
