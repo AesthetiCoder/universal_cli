@@ -16,12 +16,12 @@ const pnpmAddDependencies = (dependencies: NPMDependencyModel[]): boolean =>
 
   if(devDependencies.length)
   {
-    resultDev = execCommand(`pnpm i -D --lockfile-only ${devDependencies.join(' ')}`);
+    resultDev = execCommand(`pnpm i -D --lockfile-only --reporter=silent ${devDependencies.join(' ')}`);
   }
 
   if(prodDependencies.length)
   {
-    result = execCommand(`pnpm i --lockfile-only ${prodDependencies.join(' ')}`);
+    result = execCommand(`pnpm i --lockfile-only --reporter=silent ${prodDependencies.join(' ')}`);
   }
 
   if(result?.code !== 0 || resultDev?.code !== 0)

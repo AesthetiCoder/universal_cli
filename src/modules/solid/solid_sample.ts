@@ -30,7 +30,7 @@ const solidSamplePostInstall = (templatePath: string, targetPath: string): boole
     },
     {
       name: 'solid-js',
-      type: 'development'
+      type: 'production'
     },
     {
       name: 'vite-plugin-solid-svg',

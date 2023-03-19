@@ -1,4 +1,4 @@
-import { clear, deletePreviousLine } from '@global/utils/clear';
+import { deletePreviousLine } from '@global/utils/clear';
 import { handleError } from '@global/utils/text';
 import { icons } from '@public/icons';
 import inquirer from 'inquirer';
@@ -26,7 +26,7 @@ const promptCheckList = async (choices: string[], message: string): Promise<stri
     loop: false
   }) as promptCheckListResponse;
 
-  clear();
+  deletePreviousLine();
   return value;
 };
 
@@ -48,17 +48,12 @@ const promptList = async (choices: string[], message: string): Promise<string> =
 const promptAskForValue = async (message: string): Promise<string> =>
 {
   const input = await prompt({
-    prefix: icons.gear,
+    type: 'input',
     name: 'value',
     message
   });
 
   const { value } = input as promptResponse;
-  console.log(value);
-  console.log(value);
-  console.log(value);
-  console.log(value);
-  console.log(value);
 
   if(!value)
   {

@@ -1,4 +1,6 @@
+import { formatBytes } from '@global/utils/format_bytes';
 import { render } from '@global/utils/render';
+import { createFileMessage } from '@global/utils/text';
 import fs from 'fs';
 import path from 'path';
 
@@ -13,7 +15,7 @@ const createFolder = (folderPath: string): boolean =>
   return true;
 };
 
-const createProjectDirectoryContent = (projectName: string, templatePath: string) =>
+const createProjectDirectoryContent = (projectName: string, templatePath: string): void =>
 {
   const CURRENT_DIR = process.cwd();
   const filesToCreate = fs.readdirSync(templatePath);
@@ -30,6 +32,8 @@ const createProjectDirectoryContent = (projectName: string, templatePath: string
 
       contents = render(contents, { projectName });
       fs.writeFileSync(writePath, contents, 'utf8');
+
+      createFileMessage(path.join(projectName, file), formatBytes(stats.size));
     }
     else if(stats.isDirectory())
     {

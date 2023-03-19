@@ -1,11 +1,16 @@
 import {
-  chalkBackgroundGreen, chalkBackgroundRed, chalkGreen, chalkRed
+  chalkBackgroundGreen, chalkBackgroundRed, chalkBlue, chalkGreen, chalkRed
 } from '@global/lib/chalk';
 import { icons } from '@public/icons';
 
 const printError = (message: string) =>
 {
   console.log(chalkBackgroundRed('⛔ ERROR '), chalkRed(message), '\n');
+};
+
+const createFileMessage = (message: string, fileSize: string) =>
+{
+  console.log(icons.success, chalkBackgroundGreen(' CREATE '), message, chalkBlue(`(${fileSize})`));
 };
 
 const handleSuccess = (message: string) =>
@@ -35,5 +40,6 @@ const handleError = (error: Error, onlyMessage = false, exit = true) =>
 export {
   printError,
   handleSuccess,
+  createFileMessage,
   handleError
 };
