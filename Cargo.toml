@@ -14,13 +14,5 @@ readme = "README.md"
 edition = "2021"
 include = ["/src"]
 
-[[bin]]
-name = "universal_cli"
-path = "src/main.rs"
-
-[lib]
-name = "universal_cli"
-path = "src/lib.rs"
-
 [dependencies]
 regex = "1.7.3"
