@@ -1,33 +1,66 @@
-
 mod modules;
+use std::time::{ SystemTime, UNIX_EPOCH, Duration };
 
-const SPACE: &str = r#"
+#[cfg(windows)]
+extern crate windows;
 
+const A: &str = r#"
+                   _
+                   -`
+                  .o+`
+                 `ooo/
+                `+oooo:
+               `+oooooo:
+               -+oooooo+:
+             `/:-:++oooo+:
+            `/++++/+++++++:
+           `/++++++++++++++:
+          `/+++ooooooooooooo/`
+         ./ooosssso++osssssso+`
+        .oossssso-````/ossssss+`
+       -osssssso.      :ssssssso.
+      :osssssss/        osssso+++.
+     /ossssssss/        +ssssooo/-
+   `/ossssso+/:-        -:/+osssso+-
+  `+sso+:-`                 `.-/+oso:
+ `++:.                           `-/+/
+ .`                                 `"#;
 
-   "#;
-
-const A: &str = r#"   _
-  /_\
- / _ \
-/_/ \_\"#;
-
-fn font(text: &str)
+#[cfg(target_os = "windows")]
+fn get() -> Result<Duration, String>
 {
-  let text_vector: Vec<char> = text.to_lowercase().chars().collect();
-  let mut result: Vec<&str>= vec![];
+  let ret: u64 = unsafe { windows::Win32::System::SystemInformation::GetTickCount64() };
+  Ok(Duration::from_millis(ret))
+}
 
-  for text_char in text_vector
-  {
-    match text_char {
-      'a' => result.push(A),
-      _ => result.push(SPACE)
-    }
-  }
 
-  println!("{}", result.join(""));
+fn time () -> String
+{
+  let start = SystemTime::now().duration_since(UNIX_EPOCH).expect("error").as_secs();
+  return second_to_time(start);
+}
+
+fn second_to_time (total_seconds: u64) -> String
+{
+  let hours = (total_seconds % (3600*24)) / 3600;
+  let minutes = (total_seconds % 3600) / 60;
+  let seconds = total_seconds % 60;
+
+  return format!("{:02}:{:02}:{:02}", hours, minutes, seconds);
 }
 
 fn main()
 {
-  font("AAA AAA");
+  match get()
+  {
+    Ok(uptime) =>
+    {
+      println!("{}", second_to_time(uptime.as_secs()));
+    }
+    Err(err) => {
+        eprintln!("uptime: {}", err);
+        std::process::exit(1);
+    }
+}
+
 }
