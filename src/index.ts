@@ -5,13 +5,13 @@ import { promptList } from '@global/lib/prompt';
 import { Command } from 'commander';
 import { clear } from '@global/utils/clear';
 import { displayMessage } from '@global/lib/figlet';
-import { icons } from '@public/icons';
+import { icons } from '@global/assets/icon/icon';
 
 export const program = new Command();
 
 const question = [
-  `${icons.building} Create a new project`,
-  `${icons.feature} Add new feature`
+  `${icons.building}  Create a new project`,
+  `${icons.feature}  Add new feature`
 ];
 
 const main = async () =>
@@ -24,7 +24,7 @@ const main = async () =>
     .description(`Personal CLI to make productivity fast ${icons.rocket}`)
     .version(`${icons.package} 0.0.1`, '-v, -version');
 
-  const data = await promptList(question, 'What you want to do ?');
+  const data = await promptList(question, ' What you want to do ?');
 
   if(data === `${icons.building} Create a new project`)
   {

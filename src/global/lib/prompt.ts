@@ -1,6 +1,6 @@
 import { deletePreviousLine } from '@global/utils/clear';
 import { handleError } from '@global/utils/text';
-import { icons } from '@public/icons';
+import { icons } from '@global/assets/icon/icon';
 import inquirer from 'inquirer';
 
 const prompt = inquirer.createPromptModule();

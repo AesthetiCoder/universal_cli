@@ -16,7 +16,7 @@ const createNewFeature = async () =>
 
   for (let i = 0; i < featureType.length; i += 1)
   {
-    createFeatureDirectoryContent(featureType[i], featurePath[i]);
+    createFeatureDirectoryContent(featureType[i] || '', featurePath[i] || '');
   }
 };
 

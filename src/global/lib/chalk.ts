@@ -1,4 +1,4 @@
-import chalk from 'chalk';
+import chalk from "chalk";
 
 const chalkBlue = (message: string) => chalk.blue(message);
 const chalkRed = (message: string) => chalk.red(message);

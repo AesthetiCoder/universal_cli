@@ -1,7 +1,7 @@
 import {
   chalkBackgroundGreen, chalkBackgroundRed, chalkBlue, chalkGreen, chalkRed
 } from '@global/lib/chalk';
-import { icons } from '@public/icons';
+import { icons } from '@global/assets/icon/icon';
 
 const printError = (message: string) =>
 {

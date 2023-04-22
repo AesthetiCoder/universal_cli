@@ -1,5 +1,5 @@
-import path from 'path';
-import fs from 'fs';
+import * as path from 'path';
+import * as fs from 'fs';
 import { cdCommand } from '@global/lib/shell';
 import { printError } from '@global/utils/text';
 import { NPMDependencyModel } from '@global/models/npm_dependency';
